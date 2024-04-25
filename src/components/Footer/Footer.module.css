@@ -1,0 +1,151 @@
+.footer {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.2px solid rgb(211, 205, 205);
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.first_col {
+  flex: 1 0 38%;
+}
+.footer_intro {
+  padding: 10px;
+  margin: 12px;
+  margin-bottom: 0;
+}
+.footer_intro img {
+  margin-left: 3px;
+}
+.footer_intro p {
+  margin-top: 8px;
+  font-weight: 400;
+  margin-left: 4px;
+  margin-right: 3px;
+  /* color: black; */
+  color: #44494f;
+}
+.footer_intro p span {
+  font-weight: 600;
+}
+.footer_intro img {
+  height: 60px;
+}
+.footer_icons {
+  justify-self: center;
+  margin-left: 25px;
+}
+.individual_icons {
+  padding: 10px;
+  border-radius: 100px;
+  margin-right: 12px;
+  color: white;
+  background-color: #013796;
+}
+.footer_icons :hover {
+  scale: 0.9;
+}
+
+.second_col {
+  flex: 1 0 30%;
+  /* width: 30%; */
+  /* border: 2px solid green; */
+  text-align: center;
+  padding-top: 35px;
+}
+.second_col h1 {
+  text-align: center;
+}
+.second_col ul {
+  margin-top: 5%;
+  justify-content: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+.second_col li {
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  margin-left: 35%;
+}
+.second_col li a {
+  color: #5a6370;
+  font-weight: 400;
+}
+
+.third_col {
+  flex: 1 0 30%;
+  /* width: 30%; */
+}
+.third_col h1 {
+  font-size: large;
+  text-align: center;
+  margin-top: 7%;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.infos {
+  margin-top: 20px;
+}
+.third_col p {
+  margin-top: 5px;
+  text-align: center;
+  width: fit-content;
+  margin-left: 35%;
+  color: #44494f;
+}
+.lower_part {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  border: 2px solid white;
+  background-color: azure;
+  border-radius: 5px;
+}
+
+.p1 {
+  font-weight: 400;
+  margin-left: 30px;
+}
+.p1 span {
+  color: #013796;
+}
+
+.p2 {
+  margin-right: 20px;
+  font: 500;
+}
+.p2 span {
+  color: #013796;
+  font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+  .first_col,
+  .second_col,
+  .third_col {
+    flex: 1 0 100%; /* Set each column to occupy full width */
+    width: 100%; /* Set width to 100% */
+    margin-bottom: 20px; /* Add some spacing between columns */
+  }
+}
+
+/* For larger screens */
+@media screen and (min-width: 769px) {
+  .first_col {
+    flex: 1 0 38%; /* Set initial size for first column */
+    width: auto; /* Set width to auto to allow content to dictate width */
+  }
+
+  .second_col,
+  .third_col {
+    flex: 1 0 30%; /* Set initial size for second and third columns */
+    width: auto; /* Set width to auto to allow content to dictate width */
+  }
+}

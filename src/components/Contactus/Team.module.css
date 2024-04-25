@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.img_container {
+  justify-content: center;
+  margin-bottom: 50px;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+.img_container img {
+  height: 250px;
+  border: 2px solid black;
+  padding: 4px;
+  background-color: white;
+}
+
+.team_details {
+  height: 20px;
+  font: 500;
+  text-align: center;
+}

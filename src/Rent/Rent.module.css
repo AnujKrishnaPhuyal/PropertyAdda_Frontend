@@ -1,0 +1,29 @@
+.container {
+  /* border: 2px solid red; */
+  width: 99%;
+  height: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.grid_sidebar {
+  display: flex;
+}
+
+.gridview {
+  width: 85%;
+  /* border: 2px solid green; */
+  /* border-radius: 10px; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-left: 4%;
+}
+.sidebar {
+  width: 15%;
+  /* border: 1px solid blue; */
+  /* border-radius: 10px; */
+  /* background-color: rgb(161, 161, 161); */
+}
+
+/* .sortwala {
+} */
