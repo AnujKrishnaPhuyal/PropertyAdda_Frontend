@@ -12,6 +12,7 @@ function Team() {
             <img src={curr.img} alt="teamimg" />
             <div className={styles.team_details}>
               <p>{curr.Name}</p>
+              <p>{curr.phone}</p>
               <p>{curr.position}</p>
             </div>
           </div>

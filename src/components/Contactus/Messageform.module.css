@@ -1,6 +1,5 @@
 .form {
-  /* display: grid; */
-width: 100%;
+  width: 100%;
 }
 
 .input_fields {
@@ -9,22 +8,26 @@ width: 100%;
   font-weight: 400px;
   width: 100%;
   font-size: large;
-  /* border: solid yellow; */
 }
 
 .input_fields label {
   margin-bottom: 10px;
 }
 .input_fields input {
-  height: 30px;
-  border-radius: 3px;
-  opacity: 0.8;
-  color: black;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  opacity: 0.6;
 }
 .input_fields textarea {
-  height: 50px;
-  border-radius: 3px;
-  opacity: 0.7;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  opacity: 0.6;
 }
 
 .submit_btn {
@@ -37,9 +40,60 @@ width: 100%;
   color: white;
   cursor: pointer;
   font-weight: 200px;
-  background-color: rgb(8, 8, 198);
+  background-color: #007bff;
   font-size: large;
 }
 .submit_btn:hover {
   background-color: #0340a9;
 }
+/* 
+
+.form {
+  width: 100%;
+}
+
+.input_fields {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.input_fields label {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.input_fields input,
+.input_fields textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  opacity: 0.6;
+
+}
+
+.input_fields input:focus,
+.input_fields textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit_btn {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit_btn:hover {
+  background-color: #0056b3;
+} */
