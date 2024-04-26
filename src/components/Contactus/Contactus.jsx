@@ -1,6 +1,20 @@
 import React from "react";
 import Navbar from "../Navigation/Navbar";
 import styles from "./Contactus.module.css";
+import Team from "./Team";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+  FaStickyNote,
+} from "react-icons/fa";
+import { BiLogoGmail } from "react-icons/bi";
+import { IoLogoTiktok } from "react-icons/io5";
+import Daley_info from "../daley_details/Daley_info";
+import Messageform from "./Messageform";
+
 function Contactus() {
   return (
     <div>
@@ -14,7 +28,42 @@ function Contactus() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>{" "}
+      </div>
+      <div className={styles.footer_icons}>
+        <p>Our social media handles</p>
+        <a href="https://www.facebook.com">
+          <FaFacebook className={styles.individual_icons} />
+        </a>
+        <a href="https://www.twitter.com">
+          <FaTwitter className={styles.individual_icons} />
+        </a>
+        <a href="https://www.instagram.com">
+          <FaInstagram className={styles.individual_icons} />
+        </a>
+        <a href="https://www.Linkedin.com">
+          <FaLinkedin className={styles.individual_icons} />
+        </a>
+        <a href="https://www.youtube.com">
+          <FaYoutube className={styles.individual_icons} />
+        </a>
+        <a href="https://gmail.com">
+          <BiLogoGmail className={styles.individual_icons} />
+        </a>
+        <a href="https://tiktok.com">
+          <IoLogoTiktok className={styles.individual_icons} />
+        </a>
+      </div>
+      <div className={styles.team_members}>
+        <h1>Team Members</h1>
+        <Team />
+      </div>
+      <div className={styles.form_container}>
+        <h1>Send Us your message </h1>
+        <div className={styles.form}>
+          {" "}
+          <Messageform />
+        </div>
+      </div>
     </div>
   );
 }

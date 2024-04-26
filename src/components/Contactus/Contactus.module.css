@@ -1,0 +1,48 @@
+.footer_icons {
+  justify-self: center;
+  margin-left: 25px;
+}
+.footer_icons p {
+  font-weight: 400;
+  margin-top: 20px;
+  font-size: large;
+}
+.individual_icons {
+  padding: 10px;
+  border-radius: 100px;
+  margin-right: 12px;
+  color: white;
+  background-color: #013796;
+  margin-top: 10px;
+}
+.footer_icons a :hover {
+  scale: 0.9;
+}
+
+.team_members {
+  margin-top: 20px;
+}
+
+.team_members h1 {
+  margin-top: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form_container {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.form_container h1 {
+    font-weight: 500;
+    text-align: center;
+    margin-left: 100px;
+  margin-right: 30px;
+}
+
+.form{
+    width: 50%;
+    margin: 0 auto ;
+}

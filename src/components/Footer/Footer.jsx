@@ -7,6 +7,8 @@ import {
   FaYoutube,
   FaStickyNote,
 } from "react-icons/fa";
+import { BiLogoGmail } from "react-icons/bi";
+import { IoLogoTiktok } from "react-icons/io5";
 import styles from "./Footer.module.css";
 function Footer() {
   return (
@@ -27,7 +29,7 @@ function Footer() {
               satisfying rental experience.
               <br />{" "}
               <span>
-                "प्रपर्टी अड्डा - प्रपर्टीको अड्डा जस्तो नाम, त्यसै काम।"
+                "प्रपर्टी अड्डा - प्रपर्टीको अड्डा... जस्तो नाम, त्यसै काम।"
               </span>
             </p>
           </div>
@@ -46,6 +48,12 @@ function Footer() {
             </a>
             <a href="https://www.youtube.com">
               <FaYoutube className={styles.individual_icons} />
+            </a>
+            <a href="https://gmail.com">
+              <BiLogoGmail className={styles.individual_icons} />
+            </a>
+            <a href="https://tiktok.com">
+              <IoLogoTiktok className={styles.individual_icons} />
             </a>
           </div>
         </div>

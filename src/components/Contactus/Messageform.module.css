@@ -1,0 +1,45 @@
+.form {
+  /* display: grid; */
+width: 100%;
+}
+
+.input_fields {
+  display: grid;
+  margin-top: 20px;
+  font-weight: 400px;
+  width: 100%;
+  font-size: large;
+  /* border: solid yellow; */
+}
+
+.input_fields label {
+  margin-bottom: 10px;
+}
+.input_fields input {
+  height: 30px;
+  border-radius: 3px;
+  opacity: 0.8;
+  color: black;
+}
+.input_fields textarea {
+  height: 50px;
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+.submit_btn {
+  height: 40px;
+  width: 100%;
+  border-radius: 3px;
+  border: 0px solid white;
+  align-items: center;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 200px;
+  background-color: rgb(8, 8, 198);
+  font-size: large;
+}
+.submit_btn:hover {
+  background-color: #0340a9;
+}
