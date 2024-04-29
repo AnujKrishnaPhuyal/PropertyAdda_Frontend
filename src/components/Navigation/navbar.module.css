@@ -21,7 +21,7 @@
   gap: 80px;
   padding-top: 4px;
 }
- a {
+a {
   text-decoration: none;
   font-weight: 500;
   color: #18272f;
@@ -83,4 +83,37 @@
 
 .nav_btn:focus-visible {
   box-shadow: none;
+}
+
+
+/* Media Queries for responsive design */
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    display: none; /* Hide nav links by default for smaller screens */
+    flex-direction: column;
+    position: absolute;
+    top: 54px;
+    left: 0;
+    background-color: #ffffff;
+    width: 100%;
+    padding-left: 0;
+    gap: 10px;
+    z-index: 999;
+  }
+
+  .navbar ul.show {
+    display: flex; /* Show nav links when hamburger icon is clicked */
+  }
+
+  .hamburger_btn {
+    display: block; /* Show the button for smaller screens */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .hamburger_bar {
+    display: block; /* Show hamburger bars */
+  }
 }

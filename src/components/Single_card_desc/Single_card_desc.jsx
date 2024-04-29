@@ -46,6 +46,7 @@ function Single_card_desc(props) {
           </a>
         </button>
       </div>
+     
     </div>
   );
 }

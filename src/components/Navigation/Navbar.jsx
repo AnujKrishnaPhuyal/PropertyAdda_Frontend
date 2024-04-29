@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./navbar.module.css";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const url = "http://localhost:3000";
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+    
+  };
   return (
     <nav className={`${styles.navbar}`}>
+      
       <div className={`${styles.logo}`}>
         <Link to="/">
           <img src={`${url}/images/d00.png`} alt="logo" />
         </Link>
       </div>
-      <ul>
+      <ul className={showMenu ? 'show' : ''}>
         <li>
           <Link to="/">Home</Link>
           {/* <a href="#">Home</a> */}

@@ -14,6 +14,10 @@ const CreateProperty = () => {
     daleyImage: null,
     daleyPhone: "",
     price: "",
+    BikeParking: "#",
+    CarParking: "#",
+    AttachedBathroom: "#",
+    Kitchen: "#",
   });
   const [errors, setErrors] = useState({
     propertyName: "",
@@ -23,6 +27,10 @@ const CreateProperty = () => {
     daleyImage: "",
     daleyPhone: "",
     price: "",
+    BikeParking: "",
+    CarParking: "",
+    AttachedBathroom: "",
+    Kitchen: "",
   });
   const [touchedFields, setTouchedFields] = useState({
     propertyName: false,
@@ -32,6 +40,10 @@ const CreateProperty = () => {
     daleyImage: false,
     daleyPhone: false,
     price: false,
+    BikeParking: "",
+    CarParking: "",
+    AttachedBathroom: "",
+    Kitchen: "",
   });
 
   const handleImageChange = (event) => {
@@ -101,6 +113,10 @@ const CreateProperty = () => {
     formData.append("propertyName", allFormData.propertyName);
     formData.append("price", allFormData.price);
     formData.append("daleyImage", allFormData.daleyImage);
+    formData.append("Kitchen", allFormData.Kitchen);
+    formData.append("CarParking", allFormData.CarParking);
+    formData.append("BikeParking", allFormData.BikeParking);
+    formData.append("AttachedBathroom", allFormData.AttachedBathroom);
 
     try {
       const response = await axios.post(
@@ -126,6 +142,22 @@ const CreateProperty = () => {
     // Validate each field individually
     if (allFormData.propertyName === "#") {
       errors.propertyName = "Please select a property name";
+      console.log("not trriggered property name");
+    }
+    if (allFormData.Kitchen === "#") {
+      errors.Kitchen = "Select Avaibility of Attached Bathroom";
+      console.log("not trriggered property name");
+    }
+    if (allFormData.AttachedBathroom === "#") {
+      errors.AttachedBathroom = "Select Avaibility of Attached Bathroom";
+      console.log("not trriggered property name");
+    }
+    if (allFormData.CarParking === "#") {
+      errors.CarParking = "Please select available car parking space";
+      console.log("not trriggered property name");
+    }
+    if (allFormData.BikeParking === "#") {
+      errors.BikeParking = "Please select available Bike parking space";
       console.log("not trriggered property name");
     }
     if (!allFormData.location) {
@@ -263,14 +295,91 @@ const CreateProperty = () => {
             type="number"
             name="price"
             value={allFormData.price}
-            onChange={handleInputChange}className={styles.price_num}
-            
+            onChange={handleInputChange}
+            className={styles.price_num}
           />
           {touchedFields.price && errors.price && (
             <p className={styles.error_message}>{errors.price}</p>
           )}
         </div>
-    
+        <div>
+          <label htmlFor="bathrrom">Attached Bathroom</label>
+          <select
+            value={allFormData.AttachedBathroom}
+            onChange={handleInputChange}
+            className={styles.select}
+            id="AttachedBathroom"
+            name="AttachedBathroom"
+          >
+            <option value="#">Select</option>
+            <option value="Available">Available</option>
+            <option value="UnAvailable">UnAvailable</option>
+          </select>
+          {touchedFields.AttachedBathroom && errors.AttachedBathroom && (
+            <p className={styles.error_message}>{errors.AttachedBathroom}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="Kitchen">Kitchen</label>
+          <select
+            value={allFormData.Kitchen}
+            onChange={handleInputChange}
+            className={styles.select}
+            id="Kitchen"
+            name="Kitchen"
+          >
+            <option value="#">Select</option>
+            <option value="Available">Available</option>
+            <option value="UnAvailable">UnAvailable</option>
+          </select>
+          {touchedFields.Kitchen && errors.Kitchen && (
+            <p className={styles.error_message}>{errors.Kitchen}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="CarParking">Car Parking</label>
+          <select
+            value={allFormData.CarParking}
+            onChange={handleInputChange}
+            className={styles.select}
+            id="CarParking"
+            name="CarParking"
+          >
+            <option value="#">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          {touchedFields.CarParking && errors.CarParking && (
+            <p className={styles.error_message}>{errors.CarParking}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="CarParking">Bike Parking</label>
+          <select
+            value={allFormData.BikeParking}
+            onChange={handleInputChange}
+            className={styles.select}
+            id="BikeParking"
+            name="BikeParking"
+          >
+            <option value="#">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          {touchedFields.BikeParking && errors.BikeParking && (
+            <p className={styles.error_message}>{errors.BikeParking}</p>
+          )}
+        </div>
+
         <button type="submit" className={styles.submit_btn}>
           Submit
         </button>

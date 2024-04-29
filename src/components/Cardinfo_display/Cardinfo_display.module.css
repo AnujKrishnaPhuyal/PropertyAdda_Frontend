@@ -1,16 +1,15 @@
 .overall_container {
-  height: 620px;
+  display: flex;
+  flex-wrap: wrap;
   width: 97%;
   /* border: 2px solid red; */
-  margin: auto;
   margin-top: 20px;
-  display: flex;
+  /* border: 1px solid red; */
+}
+.image_and_overview {
+  width: 60%;
 }
 .image_and_info {
-  /* border: 2px solid green; */
-  width: 60%;
-  height: 100%;
-  /* border: 1px solid red; */
   box-shadow: 9px 5px 12px 9px rgba(0, 0, 0, 0.05);
 }
 .image_and_info img {
@@ -24,7 +23,7 @@
   margin-top: 4px;
 }
 .agent_contact {
-  width: 40%;
+  width: 35%;
   height: 100%;
   margin-left: 50px;
   /* border: 1px solid red; */
@@ -32,3 +31,13 @@
   /* background-color: aqua; */
   border-radius: 3px;
 }
+.similar_properties {
+  margin-left: 2%;
+  margin-top: 26px;
+}
+.similar_properties h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+

@@ -31,6 +31,12 @@
 .input_fields input {
   height: 30px;
   border-radius: 3px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  opacity: 0.6;
 }
 .input_fields textarea {
   height: 50px;
@@ -48,11 +54,11 @@
   color: white;
   cursor: pointer;
   font-weight: 200px;
-  background-color: rgb(8, 8, 198);
+  background-color: #007bff;
   font-size: large;
 }
 .submit_btn:hover {
-  background-color: #0340a9;
+  background-color: #003e80;
 }
 
 .error_msg {
