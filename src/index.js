@@ -15,6 +15,7 @@ import AddProperty from "./components/Display_mode/AddProperty";
 import Contactus from "./components/Contactus/Aboutus";
 import Contact from "./components/Display_mode/Contact";
 import About from "./components/Display_mode/About";
+import UserDashboard from "./components/UserDashboard/UserDashboard";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -28,6 +29,7 @@ root.render(
             <Route path="/Rent/" element={<NavRent />} />
             <Route path="/Contact/" element={<Contact />} />
             <Route path="/About/" element={<About />} />
+            <Route path="/UserDashboard/" element={<UserDashboard />} />
 
             <Route path="/AddProperty/" element={<AddProperty />} />
             <Route

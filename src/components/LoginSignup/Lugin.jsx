@@ -14,6 +14,9 @@ function Lugin() {
     password: "",
   };
   const [Signup_data, setSignup_data] = useState([]);
+  const [Success_msg, setSuccess_msg] = useState(null);
+  const [errordata, seterrordata] = useState(null);
+
   const navigate = useNavigate();
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
@@ -27,9 +30,18 @@ function Lugin() {
           })
           .then(function (response) {
             console.log("🚀 ~ response:", response);
+            setSuccess_msg("You are being logged in created");
+            setTimeout(() => {
+              setSuccess_msg(null);
+              navigate("/UserDashboard/");
+            }, 2000);
           })
           .catch(function (error) {
             console.log("🚀 ~ Lugin ~ error:", error);
+            seterrordata("Credentials doesn't match");
+            setTimeout(() => {
+              seterrordata(null);
+            }, 5000);
           });
       },
     });
@@ -69,9 +81,12 @@ function Lugin() {
           Login
         </button>
       </form>
+      <p className={styles.success_msg}> {Success_msg}</p>
+      <p className={styles.error_msg}> {errordata}</p>
 
       <br />
       <p>Already have an account</p>
+
       <Link to="/Signup/">Signup</Link>
     </div>
   );
