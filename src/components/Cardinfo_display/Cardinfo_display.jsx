@@ -18,7 +18,7 @@ function Cardinfo_display(props) {
             <Single_card_desc details={product} />
           </div>
         </div>
-        <More_details />
+        <More_details details={product} />
       </div>
       <div className={styles.agent_contact}>
         <Daley_info details={product} />

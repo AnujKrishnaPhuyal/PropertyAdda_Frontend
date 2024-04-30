@@ -18,6 +18,7 @@ const CreateProperty = () => {
     CarParking: "#",
     AttachedBathroom: "#",
     Kitchen: "#",
+    Bedroom: "",
   });
   const [errors, setErrors] = useState({
     propertyName: "",
@@ -31,6 +32,7 @@ const CreateProperty = () => {
     CarParking: "",
     AttachedBathroom: "",
     Kitchen: "",
+    Bedroom: "",
   });
   const [touchedFields, setTouchedFields] = useState({
     propertyName: false,
@@ -44,6 +46,7 @@ const CreateProperty = () => {
     CarParking: "",
     AttachedBathroom: "",
     Kitchen: "",
+    Bedroom: "",
   });
 
   const handleImageChange = (event) => {
@@ -117,6 +120,7 @@ const CreateProperty = () => {
     formData.append("CarParking", allFormData.CarParking);
     formData.append("BikeParking", allFormData.BikeParking);
     formData.append("AttachedBathroom", allFormData.AttachedBathroom);
+    formData.append("Bedroom", allFormData.Bedroom);
 
     try {
       const response = await axios.post(
@@ -162,6 +166,9 @@ const CreateProperty = () => {
     }
     if (!allFormData.location) {
       errors.location = "Please enter a location";
+    }
+    if (!allFormData.Bedroom) {
+      errors.Bedroom = "Please enter Bedroom information";
     }
     if (!allFormData.propertyType) {
       errors.propertyType = "Please enter a property type";
@@ -301,7 +308,18 @@ const CreateProperty = () => {
           {touchedFields.price && errors.price && (
             <p className={styles.error_message}>{errors.price}</p>
           )}
+          <label htmlFor="">Bedroom</label>
+          <input
+            type="text"
+            onChange={handleInputChange}
+            value={allFormData.Bedroom}
+            name="Bedroom"
+          />
+          {touchedFields.Bedroom && errors.Bedroom && (
+            <p className={styles.error_message}>{errors.Bedroom}</p>
+          )}
         </div>
+
         <div>
           <label htmlFor="bathrrom">Attached Bathroom</label>
           <select

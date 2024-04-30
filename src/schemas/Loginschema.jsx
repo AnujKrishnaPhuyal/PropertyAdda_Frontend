@@ -1,10 +1,8 @@
 import * as Yup from "yup";
 export const Loginschema = Yup.object().shape({
-  // email: Yup.string()
-  //   .email("Invalid email address")
-  //   .required("Please enter your email"),
-  name: Yup.string().min(2).max(25).required("Please enter your name"),
-
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Please enter your email"),
   password: Yup.string()
     .min(8, "Password must be at least 8 characters")
     .matches(
