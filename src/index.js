@@ -16,6 +16,7 @@ import Contactus from "./components/Contactus/Aboutus";
 import Contact from "./components/Display_mode/Contact";
 import About from "./components/Display_mode/About";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
+import Privatepath from "./components/PrivatePath/Privatepath";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -28,9 +29,10 @@ root.render(
             <Route path="/Lugin/" element={<Lugin />} />
             <Route path="/Rent/" element={<NavRent />} />
             <Route path="/Contact/" element={<Contact />} />
-            <Route path="/About/" element={<About />} />
-            <Route path="/UserDashboard/" element={<UserDashboard />} />
-
+            <Route path="/About/" element={<About />} />{" "}
+            <Route path="/private/" element={<Privatepath />}>
+              <Route path="UserDashboard" element={<UserDashboard />} />
+            </Route>
             <Route path="/AddProperty/" element={<AddProperty />} />
             <Route
               path="/SIngleDescription/:id/"

@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
+
+
 function Signup() {
   const initialValues = {
     name: "",
@@ -18,7 +20,9 @@ function Signup() {
   const [MailkoError, setMailkoError] = useState(null);
   const [Success_msg, setSuccess_msg] = useState(null);
   const [errordata, seterrordata] = useState(null);
+  const [usertoken, setusertoken] = useState(null);
   const navigate = useNavigate();
+
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
@@ -30,6 +34,11 @@ function Signup() {
             values,
           })
           .then(function (response) {
+            console.log("🚀 ~ response:", response);
+            const { token } = response.data;
+            localStorage.setItem("token", token);
+            console.log("🚀 ~ token:", token);
+            setusertoken(token);
             if (response.status === 200) {
               setSuccess_msg("Account successfully created");
               setTimeout(() => {

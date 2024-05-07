@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from "./CreateProperty.module.css";
-
+import axiosInstance from "../User_Api_fetch/API_FETCH";
 const CreateProperty = () => {
   const [allFormData, setallFormData] = useState({
     propertyImage1: null,
@@ -124,11 +124,12 @@ const CreateProperty = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/create_property/",
+        "http://127.0.0.1:8000/api/property/",
         formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
+            Authorization: "JWT " + localStorage.getItem("access"),
+            "Content-Type": "multipart/form-data", 
           },
         }
       );
@@ -136,8 +137,12 @@ const CreateProperty = () => {
 
       console.log(response.data);
       alert("you have successfully added your property");
+
+      // await axiosInstance.post("property/", {
+      //   formData,
+      // });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
