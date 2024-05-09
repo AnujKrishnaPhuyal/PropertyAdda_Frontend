@@ -53,9 +53,10 @@ function Lugin() {
 
             setTimeout(() => {
               setSuccess_msg(null);
-              navigate("/private/", {
-                state: { userData: response.data },
-              });
+              // navigate("/private/", {
+              //   state: { userData: response.data },
+              // });
+              navigate("/user/");
             }, 2000);
           })
           .catch(function (error) {

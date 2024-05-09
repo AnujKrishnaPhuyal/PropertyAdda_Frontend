@@ -10,7 +10,8 @@ import App from "../App";
 import Reducer from "../Reducer";
 import { useParams } from "react-router-dom";
 const Appcontext = createContext();
-const url = "http://127.0.0.1:8000/api/property/";
+// const url = "http://127.0.0.1:8000/api/property/";
+const url = "http://127.0.0.1:8000/api/AllData/";
 const initialState = {
   is_Loading: false,
   is_Error: false,
@@ -49,7 +50,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
- 
   return (
     <Appcontext.Provider value={{ ...state, get_Single_Data }}>
       {children}

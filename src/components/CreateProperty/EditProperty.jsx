@@ -1,25 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./CreateProperty.module.css";
 import axiosInstance from "../User_Api_fetch/API_FETCH";
-const CreateProperty = () => {
+import { useParams } from "react-router";
+import { Globalcontext } from "../Apicall";
+import { useNavigate } from "react-router-dom";
+function EditProperty() {
+  const url1 = "http://127.0.0.1:8000/api/AllData/";
+  const url = "http://127.0.0.1:8000/api/property/";
+  const { get_Single_Data, single_product } = Globalcontext();
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    get_Single_Data(`${url1}${id}`);
+  }, []);
+
   const [allFormData, setallFormData] = useState({
     propertyImage1: null,
     propertyImage2: null,
     propertyImage3: null,
-    propertyName: "#",
+    propertyName: "",
     location: "",
     propertyType: "",
     daleyName: "",
     daleyImage: null,
     daleyPhone: "",
     price: "",
-    BikeParking: "#",
-    CarParking: "#",
-    AttachedBathroom: "#",
-    Kitchen: "#",
+    BikeParking: "",
+    CarParking: "",
+    AttachedBathroom: "",
+    Kitchen: "",
     Bedroom: "",
   });
+
+  useEffect(() => {
+    if (single_product) {
+      setallFormData({
+        ...allFormData,
+        propertyName: single_product.name,
+        location: single_product.location,
+        propertyType: single_product.type,
+        daleyName: single_product.daley_name,
+        daleyPhone: single_product.daley_number,
+        price: single_product.price,
+        BikeParking: single_product.BikeParking,
+        CarParking: single_product.CarParking,
+        AttachedBathroom: single_product.AttachedBathroom,
+        Kitchen: single_product.Kitchen,
+        Bedroom: single_product.Bedroom,
+      });
+    }
+  }, [single_product]);
+  
+  // const [allFormData, setallFormData] = useState({
+  //   propertyImage1: null,
+  //   propertyImage2: null,
+  //   propertyImage3: null,
+  //   propertyName: single_product.name,
+  //   location: single_product.location,
+  //   propertyType: single_product.type,
+  //   daleyName: single_product.daley_name,
+  //   daleyImage: null,
+  //   daleyPhone: single_product.daley_number,
+  //   price: single_product.price,
+  //   BikeParking: single_product.BikeParking,
+  //   CarParking: single_product.CarParking,
+  //   AttachedBathroom: single_product.AttachedBathroom,
+  //   Kitchen: single_product.Kitchen,
+  //   Bedroom: single_product.Bedroom,
+  // });
+  console.log("🚀 ~ EditProperty ~ allFormData:", allFormData);
   const [errors, setErrors] = useState({
     propertyName: "",
     location: "",
@@ -123,19 +174,17 @@ const CreateProperty = () => {
     formData.append("Bedroom", allFormData.Bedroom);
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/property/",
-        formData,
-        {
-          headers: {
-            Authorization: "JWT " + localStorage.getItem("access"),
-          },
-        }
-      );
+      const response = await axios.put(`${url}${id}/`, formData, {
+        headers: {
+          Authorization: "JWT " + localStorage.getItem("access"),
+        },
+      });
       console.log("🚀 ~ handleSubmit ~ formData:", formData);
 
       console.log(response.data);
-      alert("you have successfully added your property");
+      alert("you have successfully updated your property");
+      navigate("/user/");
+      window.location.reload();
 
       // await axiosInstance.post("property/", {
       //   formData,
@@ -242,7 +291,7 @@ const CreateProperty = () => {
 
         <div>
           <select
-            value={allFormData.propertyname}
+            value={allFormData.propertyName}
             onChange={handleInputChange}
             className={styles.select}
             id="propertyName"
@@ -409,6 +458,6 @@ const CreateProperty = () => {
       <div></div>
     </div>
   );
-};
+}
 
-export default CreateProperty;
+export default EditProperty;

@@ -17,6 +17,8 @@ import Contact from "./components/Display_mode/Contact";
 import About from "./components/Display_mode/About";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
 import Privatepath from "./components/PrivatePath/Privatepath";
+import USERDASH from "./components/Display_mode/USERDASH";
+import EditProperty from "./components/CreateProperty/EditProperty";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -27,17 +29,19 @@ root.render(
             <Route path="/" element={<Home />} />
             <Route path="/Signup/" element={<Signup />} />
             <Route path="/Lugin/" element={<Lugin />} />
+            <Route path="/user/" element={<USERDASH />} />
             <Route path="/Rent/" element={<NavRent />} />
             <Route path="/Contact/" element={<Contact />} />
             <Route path="/About/" element={<About />} />{" "}
-            <Route path="/private/" element={<Privatepath />}>
+            {/* <Route path="/private/" element={<Privatepath />}>
               <Route path="UserDashboard" element={<UserDashboard />} />
-            </Route>
+            </Route> */}
             <Route path="/AddProperty/" element={<AddProperty />} />
             <Route
               path="/SIngleDescription/:id/"
               element={<SIngleDescription />}
             />
+            <Route path="/EditProperty/:id/" element={<EditProperty />} />
           </Routes>
         </Router>
       </RentAppprovider>
