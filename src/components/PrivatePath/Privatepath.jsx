@@ -4,27 +4,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
 import axiosInstance from "../User_Api_fetch/API_FETCH";
+import { useNavigate } from "react-router-dom";
 function Privatepath() {
   const [final_data, setfinal_data] = useState([]);
   const url = "http://127.0.0.1:8000/api/User_based_data/";
-
-  // const getData = async () => {
-  //   try {
-  //     const response = await axios.get("User_based_data/", {
-  //       headers: {
-  //         Authorization: "JWT " + localStorage.getItem("access"),
-  //         "Content-Type": "multipart/form-data",
-  //       },
-  //     });
-  //     const received = await response.data;
-  //     console.log("🚀 ~ getData ~ received:", received.data);
-  //     const { data } = received;
-  //     setfinal_data(data);
-  //   } catch (error) {
-  //     console.log("🚀 ~ getData ~ error:", error);
-  //   }
-  // };
-
+  const navigate = useNavigate();
   const getData = async () => {
     await axiosInstance
       .get("User_based_data/", {})
