@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../CardView/Card.module.css";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import axiosInstance from "../User_Api_fetch/API_FETCH";
 function UserCard(props) {
   const detail = props.details;
   const navigate = useNavigate();
@@ -9,22 +10,19 @@ function UserCard(props) {
   const url = "http://127.0.0.1:8000/api/property/";
 
   const handleDeleteClick = async (id) => {
-    try {
-      const response = await axios.delete(`${url}${id}/delete`, {
-        headers: {
-          Authorization: "JWT " + localStorage.getItem("access"),
-          "Content-Type": "multipart/form-data",
-        },
+    const response = await axiosInstance
+      .delete(`property/${id}/delete`, {})
+      .then(function (response) {
+        console.log("🚀 ~ handleDeleteClick ~ response:", response);
+        alert("You have successfully deleted your property");
+        navigate("/user/");
+        window.location.reload();
+      })
+      .catch((error) => {
+        alert("error in deleting the data");
       });
-      console.log("🚀 ~ handleDeleteClick ~ response:", response);
-      alert("You have successfully deleted your property");
-      navigate("/user/");
-      window.location.reload();
-    } catch (error) {
-      console.log(error);
-      alert("Something is wrong in deleting this property");
-    }
   };
+
   return (
     <div>
       <div className={styles.maincard}>

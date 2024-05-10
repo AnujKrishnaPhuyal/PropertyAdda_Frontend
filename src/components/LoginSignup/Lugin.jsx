@@ -26,7 +26,7 @@ function Lugin() {
     useFormik({
       initialValues,
       validationSchema: Loginschema,
-      onSubmit: (values) => {
+      onSubmit: async (values) => {
         console.log("🚀 ~ Lugin ~ values:", values);
         // const logindata = {
         //   email: values.email,
@@ -36,7 +36,7 @@ function Lugin() {
 
         setSignup_data(values);
 
-        axiosInstance
+       await axiosInstance
           .post("Loginview/", {
             email: values.email,
             password: values.password,
