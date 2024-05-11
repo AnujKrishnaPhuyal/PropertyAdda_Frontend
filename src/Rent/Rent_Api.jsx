@@ -6,8 +6,14 @@ import { useEffect } from "react";
 const Rentcontext = createContext();
 const initialState = {
   filter_rent_products: [],
+  filter_Apartment_products: [],
+  filter_Room_products: [],
+  filter_Exclusives_products: [],
   new_sort_products: [],
   all_rent_products: [],
+  Room_products: [],
+  Apartment_products: [],
+  Exclusives_products: [],
   filters: {
     text: "",
     names: "all",
@@ -24,6 +30,16 @@ const RentAppprovider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "ALL_RENT_PRODUCTS", payload: filter_Products });
   }, [filter_Products]);
+
+  useEffect(() => {
+    dispatch({ type: "PROPERTY_FILTER_ROOM", payload: filter_Products });
+  }, [state.all_rent_products]);
+  useEffect(() => {
+    dispatch({ type: "PROPERTY_FILTER_APARTMENT", payload: filter_Products });
+  }, [state.all_rent_products]);
+  useEffect(() => {
+    dispatch({ type: "PROPERTY_FILTER_EXCLUSIVES", payload: filter_Products });
+  }, [state.all_rent_products]);
 
   const Update_fields = (event) => {
     let names = event.target.name;
@@ -43,6 +59,7 @@ const RentAppprovider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "FILTER_PRODUCTS" });
   }, [filter_Products, state.filters]);
+
   useEffect(() => {
     dispatch({ type: "SORTING_PRODUCTS" });
   }, [filter_Products, state.sorting_values]);

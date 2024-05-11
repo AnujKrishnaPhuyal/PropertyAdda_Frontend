@@ -3,6 +3,12 @@ import { MdOutlinePhone } from "react-icons/md";
 
 import styles from "./Daley_info.module.css";
 function Daley_info(props) {
+  const formdata = {
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  };
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -12,6 +18,7 @@ function Daley_info(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     // You can handle form submission logic here
     console.log("Form submitted!");
   };
@@ -38,7 +45,7 @@ function Daley_info(props) {
           <input
             type="text"
             id="fullName"
-            value={fullName}
+            value={formdata.name}
             onChange={(e) => setFullName(e.target.value)}
             placeholder="Enter your full name"
           />
@@ -48,7 +55,7 @@ function Daley_info(props) {
           <input
             type="email"
             id="email"
-            value={email}
+            value={formdata.email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
           />
@@ -58,7 +65,7 @@ function Daley_info(props) {
           <input
             type="tel"
             id="phoneNumber"
-            value={phoneNumber}
+            value={formdata.phone}
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Enter your phone number"
           />
@@ -67,7 +74,7 @@ function Daley_info(props) {
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
-            value={message}
+            value={formdata.message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Hi, I am interested in this CG Hills Premium House, Bhaisepati"
           />

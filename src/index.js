@@ -19,6 +19,9 @@ import UserDashboard from "./components/UserDashboard/UserDashboard";
 import Privatepath from "./components/PrivatePath/Privatepath";
 import USERDASH from "./components/Display_mode/USERDASH";
 import EditProperty from "./components/CreateProperty/EditProperty";
+import SpecificPropertyAll from "./components/Flats/SpecificPropertyAll";
+import SpecificPropertyExclusives from "./components/Flats/SpecificPropertyExclusives";
+import SpecificPropertyRoom from "./components/Flats/SpecificPropertyRoom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -32,6 +35,11 @@ root.render(
             <Route path="/user/" element={<USERDASH />} />
             <Route path="/Rent/" element={<NavRent />} />
             <Route path="/Contact/" element={<Contact />} />
+            <Route path="/FlatsANdApartments/" element={<SpecificPropertyAll />} />
+            <Route path="/Rooms/" element={            <SpecificPropertyRoom/>
+} />
+            <Route path="/Exclusives/" element={            <SpecificPropertyExclusives/>
+} />
             <Route path="/About/" element={<About />} />{" "}
             {/* <Route path="/private/" element={<Privatepath />}>
               <Route path="UserDashboard" element={<UserDashboard />} />

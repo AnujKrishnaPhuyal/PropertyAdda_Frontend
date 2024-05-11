@@ -1,10 +1,53 @@
 const Rent_Reducer = (state, action) => {
   switch (action.type) {
     case "ALL_RENT_PRODUCTS":
+      const allrent = action.payload;
+      console.log("🚀 ~ allrent:", allrent);
+
       return {
         ...state,
         all_rent_products: action.payload,
         filter_rent_products: action.payload,
+      };
+
+      break;
+    case "PROPERTY_FILTER_ROOM":
+      let dat = action.payload;
+      const roomfilterdata = dat.filter((item) => item.name === "Rooms");
+      // console.log("🚀 ~ roomfilterdata:", roomfilterdata);
+      return {
+        ...state,
+        Room_products: roomfilterdata,
+        filter_Room_products: roomfilterdata,
+      };
+
+      break;
+    case "PROPERTY_FILTER_APARTMENT":
+      let datass = action.payload;
+
+      const Apartmentfilterdata = datass.filter(
+        (item) => item.name === "Flats and Apartments"
+      );
+      // console.log("🚀 ~ Apartmentfilterdata:", Apartmentfilterdata);
+
+      return {
+        ...state,
+        Apartment_products: Apartmentfilterdata,
+        filter_Apartment_products: Apartmentfilterdata,
+      };
+
+      break;
+    case "PROPERTY_FILTER_EXCLUSIVES":
+      let datas = action.payload;
+
+      const exclusivesfilterdata = datas.filter(
+        (item) => item.name === "Exclusives"
+      );
+      console.log("🚀 ~ exclusivesfilterdata:", exclusivesfilterdata);
+      return {
+        ...state,
+        Exclusives_products: exclusivesfilterdata,
+        filter_Exclusives_products: exclusivesfilterdata,
       };
 
       break;
@@ -25,13 +68,33 @@ const Rent_Reducer = (state, action) => {
 
     case "FILTER_PRODUCTS":
       // console.log("state is", state);
-      let { all_rent_products } = state;
+      let {
+        all_rent_products,
+        filter_Room_products,
+        filter_Apartment_products,
+        filter_Exclusives_products,
+      } = state;
       let temp_filter_product = [...all_rent_products];
+      let temp_room_products = [...filter_Room_products];
+      let temp_flat_products = [...filter_Apartment_products];
+      let temp_exclusive_products = [...filter_Exclusives_products];
+      console.log("🚀 ~ temp_flat_products:", temp_flat_products);
+      let temp_Exclusives_products = [state.Exclusives_products];
       let { name, text } = state.filters;
       // console.log("🚀 ~ name:", name);
 
       if (text) {
         temp_filter_product = temp_filter_product.filter((currr) => {
+          return currr.location.toLowerCase().includes(text);
+        });
+
+        temp_flat_products = temp_flat_products.filter((currr) => {
+          return currr.location.toLowerCase().includes(text);
+        });
+        temp_room_products = temp_room_products.filter((currr) => {
+          return currr.location.toLowerCase().includes(text);
+        });
+        temp_exclusive_products = temp_exclusive_products.filter((currr) => {
           return currr.location.toLowerCase().includes(text);
         });
       }
@@ -51,6 +114,9 @@ const Rent_Reducer = (state, action) => {
       return {
         ...state,
         filter_rent_products: temp_filter_product,
+        Apartment_products: temp_flat_products,
+        Room_products: [...temp_room_products],
+        Exclusives_products: [...temp_exclusive_products],
         suggestion: temp_filter_product,
       };
       break;
@@ -69,6 +135,9 @@ const Rent_Reducer = (state, action) => {
       let valuess = state.sorting_values;
       // let sort_filter_products = action.payload;
       let sort_filter_products = state.filter_rent_products;
+      let apartment_filter_products = state.Apartment_products;
+      let room_filter_products = state.Room_products;
+      let exclusives_filter_products = state.Exclusives_products;
 
       // if (action.payload) {
       //   return (valuess = "lowest");
@@ -89,14 +158,21 @@ const Rent_Reducer = (state, action) => {
           return b.location.localeCompare(a.location);
         }
         if (valuess === "All") {
-          return sort_filter_products;
+          return sort_filter_products, apartment_filter_products;
         }
       };
 
       let filter_sort_products = sort_filter_products.sort(sorting_fun);
+      let filter_Apartment = apartment_filter_products.sort(sorting_fun);
+      let filter_Rooms = room_filter_products.sort(sorting_fun);
+      let filter_Exclusives = exclusives_filter_products.sort(sorting_fun);
       return {
         ...state,
         filter_rent_products: filter_sort_products,
+        Room_products: filter_Rooms,
+        Apartment_products: filter_Apartment,
+        Exclusives_products: filter_Exclusives,
+        filter_Apartment_products: filter_Apartment,
       };
       break;
 

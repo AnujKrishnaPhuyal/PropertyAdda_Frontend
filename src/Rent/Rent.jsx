@@ -8,10 +8,13 @@ import Display_Grid from "./Display_all/Display_Grid";
 import { Rent_GLobalcontext } from "./Rent_Api";
 
 function Rent() {
+  const{filter_rent_products} =Rent_GLobalcontext()
+  let number = filter_rent_products.length;
+
   return (
     <div className={styles.container}>
       <div className={styles.sortwala}>
-        <Rent_upbar />
+        <Rent_upbar details={number}/>
       </div>
       <div className={styles.grid_sidebar}>
         <div className={styles.sidebar}>

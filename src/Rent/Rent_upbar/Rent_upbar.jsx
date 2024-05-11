@@ -1,23 +1,33 @@
 import React, { useState } from "react";
 import styles from "./Rent_upbar.module.css";
 import { Rent_GLobalcontext } from "../Rent_Api";
-function Rent_upbar() {
+function Rent_upbar(props) {
+  const data = props.details;
   const {
     sorting,
     Update_fields,
-    filter_rent_products,
-    
+    filters: { text },
   } = Rent_GLobalcontext();
-  let number = filter_rent_products.length;
-  // console.log("🚀 ~ Rent_upbar ~ number:", number);
   const handleSubmit = (event) => {
     event.preventDefault();
   };
   return (
     <div className={styles.container}>
-    
+      <div className={styles.search_field_bar}>
+        <form
+          action={(e) => {
+            e.preventDefault();
+          }}
+          onChange={Update_fields}
+        >
+          <label htmlFor="">
+            Location:
+            <input type="text" name="text" value={text} />
+          </label>
+        </form>
+      </div>
       <p>
-        <span>{number} </span>number of products found
+        <span>{data} </span>number of products found
       </p>
       <div className={styles.sort_items}>
         <form action="#" className={styles.form_container}>
