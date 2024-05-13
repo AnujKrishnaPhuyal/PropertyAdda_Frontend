@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const baseurl = "http://127.0.0.1:8000/api/";
+// const baseurl = "http://127.0.0.1:8000/api/";
+const baseurl = "https://rental.pythonanywhere.com/api/";
 
 const axiosInstance = axios.create({
   baseURL: baseurl,
-  timeout: 1000,
+  timeout: 8000,
   headers: {
     Authorization: localStorage.getItem("access")
       ? "JWT " + localStorage.getItem("access")

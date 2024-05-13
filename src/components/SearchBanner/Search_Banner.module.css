@@ -19,11 +19,13 @@
 }
 
 .search_btn {
+  display: flex;
+  flex-direction: row;
   padding: 0;
   margin-left: 30px;
-  flex-wrap: wrap;
   height: 20px;
   position: relative;
+  gap: 5px;
 }
 
 .search_btn input {
@@ -31,20 +33,21 @@
   width: 22%;
   border-radius: 3px;
   opacity: 0.3;
+  color: black;
+  font-weight: 600;
 }
 
 .search_btn button {
-  margin-top: 20px;
-  height: 33px;
+  height: 35px;
   background-color: white;
   width: 120px;
   font-size: 0.875rem;
-  opacity: 0.5;
+  opacity: 0.7;
   border: 1px solid black;
   border-radius: 4px;
-  margin-left: 4px;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+ 
 }

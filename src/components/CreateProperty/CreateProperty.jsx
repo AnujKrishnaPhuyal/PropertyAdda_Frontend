@@ -124,7 +124,7 @@ const CreateProperty = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/property/",
+        "https://rental.pythonanywhere.com/api/property/",
         formData,
         {
           headers: {
@@ -135,7 +135,9 @@ const CreateProperty = () => {
       console.log("🚀 ~ handleSubmit ~ formData:", formData);
 
       console.log(response.data);
-      alert("you have successfully added your property");
+      alert("you have successfully updated your property");
+      // navigate("/user/");
+      // window.location.reload();
 
       // await axiosInstance.post("property/", {
       //   formData,
@@ -144,6 +146,24 @@ const CreateProperty = () => {
       console.log(error);
     }
   };
+
+  //   await axiosInstance
+  //     .post("property/", formData, {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //     })
+  //     .then(function (response) {
+  //       console.log("🚀 ~ response:", response);
+
+  //       axiosInstance.defaults.headers["Authorization"] =
+  //         "JWT " + localStorage.getItem("access");
+  //       alert("you have successfully added your property");
+  //     })
+  //     .catch(function (error) {
+  //       console.log("🚀 ~ Lugin ~ error:", error);
+  //     });
+  // };
 
   const validateForm = () => {
     let errors = {};

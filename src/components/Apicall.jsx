@@ -11,7 +11,8 @@ import Reducer from "../Reducer";
 import { useParams } from "react-router-dom";
 const Appcontext = createContext();
 // const url = "http://127.0.0.1:8000/api/property/";
-const url = "http://127.0.0.1:8000/api/AllData/";
+// const url = "http://127.0.0.1:8000/api/AllData/";
+const url = "https://rental.pythonanywhere.com/api/AllData/";
 const initialState = {
   is_Loading: false,
   is_Error: false,
