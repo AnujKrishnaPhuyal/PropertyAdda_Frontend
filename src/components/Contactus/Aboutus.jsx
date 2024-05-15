@@ -3,9 +3,10 @@ import Team from "./Team";
 import styles from "./Aboutus.module.css";
 
 function Aboutus() {
-  const url = "http://localhost:3000/";
+  // const url = "http://localhost:3000/";
+  const url = "https://rentalforyou.netlify.app/";
   return (
-    <div>
+    <div className={styles.main_class}>
       <div className={styles.image}>
         <div className={styles.aboutus_desc}>
           <h1>About Property Adda</h1>

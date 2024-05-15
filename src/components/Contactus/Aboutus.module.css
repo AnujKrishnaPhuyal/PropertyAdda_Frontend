@@ -1,7 +1,7 @@
 .image {
   display: flex;
   flex-wrap: wrap;
-  width: auto;
+  width: 100%;
 }
 .image img {
   height: 450px;
@@ -66,4 +66,32 @@
   font-weight: 500;
   text-align: center;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .main_class {
+    width: auto;
+  }
+  .image {
+    width: auto;
+    margin-bottom: 140px;
+  }
+  .aboutus_desc {
+    margin-left: 0;
+    width: 88%;
+    margin-top: 40%;
+    margin-left: 6%;
+  }
+
+  .image img {
+    margin: 0;
+    height: auto;
+  }
+  .more_desc {
+    width: auto;
+  }
+
+  .aboutus_desc p {
+    font-size: small;
+  }
 }

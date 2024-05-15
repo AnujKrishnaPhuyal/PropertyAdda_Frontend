@@ -6,8 +6,8 @@ import { useParams } from "react-router";
 import { Globalcontext } from "../Apicall";
 import { useNavigate } from "react-router-dom";
 function EditProperty() {
-  const url1 = "http://127.0.0.1:8000/api/AllData/";
-  const url = "http://127.0.0.1:8000/api/property/";
+  const url1 = "https://rental.pythonanywhere.com/api/AllData/";
+  const url = "https://rental.pythonanywhere.com/api/property/";
   const { get_Single_Data, single_product } = Globalcontext();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ function EditProperty() {
       });
     }
   }, [single_product]);
-  
+
   // const [allFormData, setallFormData] = useState({
   //   propertyImage1: null,
   //   propertyImage2: null,
@@ -327,7 +327,7 @@ function EditProperty() {
           {touchedFields.propertyType && errors.propertyType && (
             <p className={styles.error_message}>{errors.propertyType}</p>
           )}
-          <label htmlFor="">Daley Name</label>
+          <label htmlFor="">Agent Name</label>
           <input
             type="text"
             onChange={handleInputChange}
@@ -337,7 +337,7 @@ function EditProperty() {
           {touchedFields.daleyName && errors.daleyName && (
             <p className={styles.error_message}>{errors.daleyName}</p>
           )}
-          <label htmlFor="">Daley image</label>
+          <label htmlFor="">Agent image</label>
           <input type="file" accept="image/*" onChange={handleImageChange} />
           <label htmlFor="number">Phone</label>
           <input

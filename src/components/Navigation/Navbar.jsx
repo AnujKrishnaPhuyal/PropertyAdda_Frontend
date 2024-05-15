@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { isloggedin } from "../LoginSignup/Loginlogic";
 import { useNavigate } from "react-router-dom";
 function Navbar() {
-  const url = "http://localhost:3000";
+  // const url = "http://localhost:3000";
+  const url = "https://rentalforyou.netlify.app/";
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
 
@@ -52,7 +53,6 @@ function Navbar() {
           <Link to="/AddProperty/">
             <button className={`${styles.nav_btn}`}>List your Property</button>
           </Link>
-
         ) : (
           <Link to="/lugin/">
             <button className={`${styles.nav_btn}`}>List your Property</button>

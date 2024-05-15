@@ -7,7 +7,7 @@ import axiosInstance from "../User_Api_fetch/API_FETCH";
 import { useNavigate } from "react-router-dom";
 function Privatepath() {
   const [final_data, setfinal_data] = useState([]);
-  const url = "http://127.0.0.1:8000/api/User_based_data/";
+  const url = "https://rental.pythonanywhere.com/api/User_based_data/";
   const navigate = useNavigate();
   const getData = async () => {
     await axiosInstance

@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { Globalcontext } from "../Apicall";
 function SingleProductDesc() {
   // const url = "http://127.0.0.1:8000/api/property/";
-  const url = "http://127.0.0.1:8000/api/AllData/";
+  const url = "https://rental.pythonanywhere.com/api/AllData/";
 
   const { get_Single_Data, single_product } = Globalcontext();
   const { id } = useParams();

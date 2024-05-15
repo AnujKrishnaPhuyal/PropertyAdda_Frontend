@@ -1,12 +1,13 @@
 .Banner {
-  background-image: url("http://localhost:3000/images/home.jpeg");
+  background-image: url("https://rentalforyou.netlify.app/images/home.jpeg");
   height: 470px;
-  width: 100%;
+  width: auto;
   background-size: cover; /* This will resize the background image to cover the entire element */
   opacity: 0.9;
   /* display: block; */
   display: flex;
   flex-direction: column;
+  /* border: 2px solid blue; */
 }
 
 .Banner h1 {
@@ -49,5 +50,32 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
- 
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .Banner {
+    width: auto;
+    margin: 0;
+  }
+
+  .Banner h1{
+    width: auto;
+  }
+  
+.search_btn input {
+  width: auto;
+  
+}
+  .search_btn button{
+    width: auto;
+
+  }
 }

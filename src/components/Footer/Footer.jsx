@@ -11,12 +11,14 @@ import { BiLogoGmail } from "react-icons/bi";
 import { IoLogoTiktok } from "react-icons/io5";
 import styles from "./Footer.module.css";
 function Footer() {
+  const url = "https://rentalforyou.netlify.app/";
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.first_col}>
           <div className={styles.footer_intro}>
-            <img src="http://localhost:3000/images/logo.ico" alt="" />
+            <img src={`${url}/images/d00.png`} alt="logo" />
             <p>
               Welcome to Property Adda, your ultimate stop for rental properties
               in Nepal. Whether you're a student in search of a cozy room or a
@@ -100,7 +102,12 @@ function Footer() {
           © 2024 <span>Property Adda</span>. All Right Reserved
         </p>
         <p className={styles.p2}>
-          Developed By- <span>Er. Anuj Krishna Phuyal</span>
+          Developed By-{" "}
+          <span>
+            <a href="https://www.anujkrishna.com.np/" target="_blank">
+              Er. Anuj Krishna Phuyal
+            </a>
+          </span>
         </p>
       </div>
     </footer>

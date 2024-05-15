@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
-
 function Signup() {
   const initialValues = {
     name: "",
@@ -30,7 +29,8 @@ function Signup() {
       onSubmit: (values) => {
         setSignup_data(values);
         axios
-          .post("http://127.0.0.1:8000/api/Users/", {
+          // .post("http://127.0.0.1:8000/api/Users/", {
+          .post("https://rental.pythonanywhere.com/api/Users/", {
             values,
           })
           .then(function (response) {

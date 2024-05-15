@@ -53,8 +53,6 @@
 
 .second_col {
   flex: 1 0 30%;
-  /* width: 30%; */
-  /* border: 2px solid green; */
   text-align: center;
   padding-top: 35px;
 }
@@ -150,8 +148,25 @@
   .second_col,
   .third_col {
     flex: 1 0 100%; /* Set each column to occupy full width */
-    width: 100%; /* Set width to 100% */
+    width: auto; /* Set width to 100% */
     margin-bottom: 20px; /* Add some spacing between columns */
+    margin-left: 0;
+    justify-content: normal;
+  }
+
+  .lower_part {
+    display: block;
+  }
+  .p1 {
+    width: 100%;
+    margin-bottom: 3px;
+  }
+  .p2 {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 30px;
+    margin-bottom: 0px;
   }
 }
 
@@ -166,5 +181,9 @@
   .third_col {
     flex: 1 0 30%; /* Set initial size for second and third columns */
     width: auto; /* Set width to auto to allow content to dictate width */
+  }
+
+  .second_col ul {
+    justify-content: normal;
   }
 }

@@ -49,7 +49,7 @@ function Rent_Sidebar() {
           );
         })}
       </div>
-      <form
+      {/* <form
         action={(e) => {
           e.preventDefault();
         }}
@@ -63,7 +63,7 @@ function Rent_Sidebar() {
             ))}
           </ul>
         )}
-      </form>
+      </form> */}
 
       {/* {suggestion} */}
     </div>

@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import styles from "./CreateProperty.module.css";
 import axiosInstance from "../User_Api_fetch/API_FETCH";
+import { useNavigate } from "react-router-dom";
+
 const CreateProperty = () => {
+  const navigate = useNavigate();
+
   const [allFormData, setallFormData] = useState({
     propertyImage1: null,
     propertyImage2: null,
@@ -125,23 +129,21 @@ const CreateProperty = () => {
     try {
       const response = await axios.post(
         "https://rental.pythonanywhere.com/api/property/",
+        // "http://127.0.0.1:8000/api/property/",
         formData,
         {
           headers: {
             Authorization: "JWT " + localStorage.getItem("access"),
+            "Content-Type": "multipart/form-data",
           },
         }
       );
       console.log("🚀 ~ handleSubmit ~ formData:", formData);
 
       console.log(response.data);
-      alert("you have successfully updated your property");
-      // navigate("/user/");
-      // window.location.reload();
-
-      // await axiosInstance.post("property/", {
-      //   formData,
-      // });
+      alert("you have successfully created your property");
+      navigate("/user/");
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -298,7 +300,7 @@ const CreateProperty = () => {
           {touchedFields.propertyType && errors.propertyType && (
             <p className={styles.error_message}>{errors.propertyType}</p>
           )}
-          <label htmlFor="">Daley Name</label>
+          <label htmlFor="">Agent Name</label>
           <input
             type="text"
             onChange={handleInputChange}
@@ -308,7 +310,7 @@ const CreateProperty = () => {
           {touchedFields.daleyName && errors.daleyName && (
             <p className={styles.error_message}>{errors.daleyName}</p>
           )}
-          <label htmlFor="">Daley image</label>
+          <label htmlFor="">Agent image</label>
           <input type="file" accept="image/*" onChange={handleImageChange} />
           <label htmlFor="number">Phone</label>
           <input
