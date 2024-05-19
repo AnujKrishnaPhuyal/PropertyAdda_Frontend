@@ -7,6 +7,8 @@ import {
   FaYoutube,
   FaStickyNote,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import { BiLogoGmail } from "react-icons/bi";
 import { IoLogoTiktok } from "react-icons/io5";
 import styles from "./Footer.module.css";
@@ -63,25 +65,25 @@ function Footer() {
           <h3>Our Links</h3>
           <ul>
             <li>
-              <a href="#">Home</a>
-            </li>{" "}
-            <li>
-              <a href="#">All Properties</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">About Us</a>
+              <Link to="/Rent/">All Properties</Link>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+              <Link to="/About/">About us</Link>
             </li>
             <li>
-              <a href="#">Rooms</a>
+              <Link to="/Contact/">Contact us</Link>
             </li>
             <li>
-              <a href="#">Flats and Apartments</a>
+              <Link to="/Rooms/">Rooms</Link>
             </li>
             <li>
-              <a href="#">Exclusives</a>
+              <Link to="/FlatsANdApartments/">Flats and Apartments</Link>
+            </li>
+            <li>
+              <Link to="/Exclusives/">Exclusives</Link>
             </li>
           </ul>
         </div>

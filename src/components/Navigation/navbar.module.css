@@ -1,11 +1,15 @@
+.active {
+  background-color: #1d4ed8;
+}
+
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  height: 54px;
-  width: 97%;
-  margin: 0 auto;
   align-items: center;
-  /* border: 1px solid black; */
+  top: 0;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 .logo {
@@ -14,12 +18,14 @@
 
 .logo img {
   height: 45px;
+  mix-blend-mode: darken;
 }
 .navbar ul {
   list-style-type: none;
   display: flex;
   gap: 80px;
   padding-top: 4px;
+  font: 400;
 }
 a {
   text-decoration: none;
@@ -46,15 +52,16 @@ a {
   transform-origin: left;
   transform: scaleX(1);
 }
-/* CSS */
+
 .nav_btn {
   margin-right: 5px;
   height: 45px;
-  background-color: #ffffff;
+  background-color: rgb(0, 42, 84);
+
   border: 1px solid rgb(209, 213, 219);
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: #111827;
+  color: #ffffff;
   font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -62,7 +69,6 @@ a {
   font-weight: 600;
   line-height: 1.25rem;
   padding: 0.75rem 1rem;
-  text-align: center;
   text-decoration: none #d1d5db solid;
   text-decoration-thickness: auto;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -70,10 +76,12 @@ a {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  text-align: center;
+  justify-content: center;
 }
 
 .nav_btn:hover {
-  background-color: rgb(249, 250, 251);
+  background-color: #005eff;
 }
 
 .nav_btn:focus {
@@ -85,35 +93,40 @@ a {
   box-shadow: none;
 }
 
+.button_handle {
+  display: flex;
 
-/* Media Queries for responsive design */
+  text-align: center;
+  justify-content: space-around;
+}
+
+.hamburger_menu {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+.hamburger {
+  display: none;
+}
+/* .mob_nav ul {
+  list-style-type: none;
+  text-decoration: none;
+  margin-top: 200px;
+  border: 1px solid red;
+  position: relative;
+  display: block;
+} */
+
 @media screen and (max-width: 768px) {
+  .hamburger_menu {
+    display: flex;
+    padding: 1px;
+  }
+  .hamburger {
+    display: flex;
+  }
+
   .navbar ul {
-    display: none; /* Hide nav links by default for smaller screens */
-    flex-direction: column;
-    position: absolute;
-    top: 54px;
-    left: 0;
-    background-color: #ffffff;
-    width: 100%;
-    padding-left: 0;
-    gap: 10px;
-    z-index: 999;
-  }
-
-  .navbar ul.show {
-    display: flex; /* Show nav links when hamburger icon is clicked */
-  }
-
-  .hamburger_btn {
-    display: block; /* Show the button for smaller screens */
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-  }
-
-  .hamburger_bar {
-    display: block; /* Show hamburger bars */
+    display: none;
   }
 }

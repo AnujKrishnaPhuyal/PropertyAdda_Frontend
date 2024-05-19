@@ -17,7 +17,10 @@ function Single_card_desc(props) {
     <div className={styles.container}>
       <div className={styles.head_container}>
         <h1 className={styles.first_h1}>{selectedItem.type}</h1>
-        <h1 className={styles.first_h2}>{selectedItem.price}</h1>
+        <h1 className={styles.first_h2}>
+          <span>Price: </span>
+          {selectedItem.price}
+        </h1>
       </div>
       <div className={styles.location}>
         <IoLocationOutline />
@@ -27,26 +30,25 @@ function Single_card_desc(props) {
       <div className={styles.icons_container}>
         <button className={styles.fb_btn}>
           <a href="https://www.facebook.com">
-            <FaFacebook />
+            <FaFacebook className={styles.facebook} />
             <h5>Facebook</h5>
           </a>
         </button>
         <button className={styles.insta_btn}>
           {" "}
           <a href="https://www.instagram.com">
-            <FaInstagram />
+            <FaInstagram className={styles.facebook} />
             <h5>Instagram</h5>
           </a>
         </button>
         <button className={styles.phone_btn}>
           {" "}
           <a href="https://www.instagram.com">
-            <FaPhone />
+            <FaPhone className={styles.facebook} />
             <h5>Phone</h5>
           </a>
         </button>
       </div>
-     
     </div>
   );
 }

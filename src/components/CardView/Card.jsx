@@ -12,7 +12,7 @@ function Card(props) {
         <div key={index} className={styles.container}>
           <div className={styles.card_img}>
             <Link to={`/SIngleDescription/${card.id}`} key={index}>
-              <img src={card.img3} alt="card_image" />
+              <img src={card.img1} alt="card_image" />
             </Link>
           </div>
           <Link to={`/SIngleDescription/${card.id}`} key={index}>

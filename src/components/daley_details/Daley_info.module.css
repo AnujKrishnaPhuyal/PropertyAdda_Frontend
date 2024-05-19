@@ -80,3 +80,12 @@ h2 {
 .submit_btn:hover {
   background-color: #0340a9;
 }
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  
+}

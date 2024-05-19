@@ -7,7 +7,7 @@
 }
 
 .container {
-  height: 300px;
+  height:300;
   /* width: 320px; */
   width: 280px;
   /* width: calc((100% - 60px) / 3); */

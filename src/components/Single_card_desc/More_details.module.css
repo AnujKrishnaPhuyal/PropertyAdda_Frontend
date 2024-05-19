@@ -44,3 +44,14 @@
   margin-left: 10px;
 }
 
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    padding: 2px 2px 2px 2px;
+    margin-top: 20px;
+   margin: 10px 0 0 0  auto;
+    box-shadow: 9px 5px 12px 9px rgba(0, 0, 0, 0.05);
+    padding-bottom: 20px;
+  }
+}
